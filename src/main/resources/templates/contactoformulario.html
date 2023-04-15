@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+</head>
+<link rel="stylesheet" th:href="@{/style.css}" />
+<body>
+<br>
+<br>
+<form th:action="@{/contactspage/insertando}" th:object="${contact}"  method="POST">
+  <label for="nombre"><b>Nombres   :</b></label>
+  <input type="text" th:field="*{nombres}" name="nombre"><br><br>
+  <label for="apellido"><b>Apellidos :</b></label>
+  <input type="text" th:field="*{apellidos}" name="apellido"><br><br>
+  <label for="celu"><b>Celular        :</b></label>
+  <input type="number" th:field="*{phone}" name="celu"><br><br>
+  <label for="email"><b>Correo   :</b></label>
+  <input type="text" th:field="*{correo}" name="email"><br><br><br>
+  <label for="direcc"><b>Direcci'on :</b></label>
+  <input type="text" th:field="*{direccion}" name="direcc"><br><br><br>
+  <label for="birthday"><b>Cumpleahnos :</b></label>
+  <input type="text" th:field="*{cumpleanos}" name="birthday"><br><br><br>
+  <input type="submit" th:value="${Regitexthtml}">
+</form>
+</body>
+</html>

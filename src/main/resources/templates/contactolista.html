@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title> Lab2-Rojas </title>
+</head>
+   <link rel="stylesheet" th:href="@{/style.css}" />
+<body>
+
+<br>
+<center><h3 th:text=" Bienvenido "/></center>
+<center><b th:text="Contactos"/></center>
+<br>
+
+
+
+<table id="produ">
+
+   <tr>
+       <th>C'odigo</th>
+       <th>Nombres</th>
+       <th>Apellidos</th>
+       <th>Celular</th>
+       <th>Correo</th>
+       <th>Direcci'on</th>
+       <th>Cumpleahnos</th>
+       <th>Editar</th>
+       <th>Eliminar</th>
+   </tr>
+   <tr th:each="identif : ${contactsalltag}">
+      <td th:text="${identif.codigo}"></td>
+      <td th:text="${identif.nombres}"></td>
+      <td th:text="${identif.apellidos}"></td>
+      <td th:text="${identif.phone}"></td>
+      <td th:text="${identif.correo}"></td>
+      <td th:text="${identif.direccion}"></td>
+      <td th:text="${identif.cumpleanos}"></td>
+      <td><a th:href="@{/contactspage/registrocont/} + ${identif.codigo}"  th:text="Editar"></a></td>
+      <td><a th:href="@{/contactspage/eliminar/} + ${identif.codigo}"  th:text="Eliminar" 
+      onclick="return confirm('Estas seguro que desea eliminar')"></a></td>
+   </tr>
+</table>
+<br>
+<br>
+<a href="/contactspage/registrocont/">Registrar Contacto</a>
+</body>
+</html>
